@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import ListDetails from "../../components/DirectListing/ListDetails";
-import Indicators from "../../components/DirectListing/Indicators";
-import { FormData } from "../../constants/types";
+import ListDetails from "@/components/DirectListing/ListDetails";
+import Indicators from "@/components/DirectListing/Indicators";
+import { FormData } from "@/constants/types";
 import Table, { ColumnsType } from "antd/es/table";
-import ListName from "../../components/DirectListing/ListName";
-import General from "../../components/DirectListing/General";
+import ListName from "@/components/DirectListing/ListName";
+import General from "@/components/DirectListing/General";
 import { Icons } from "@/components/common";
 
 interface DataType {
@@ -80,7 +80,7 @@ const DirectListing = () => {
   return (
     <div className="directListing mx-12">
       <div className=" p-5 bg-white mb-4">
-        <Table columns={columns} dataSource={data} scroll={{ x: 2400 }} />
+        <Table columns={columns} dataSource={data} scroll={{ x: 2400 }} />s
       </div>
       <div className="flex justify-between w-full">
         <div className="w-[64%]">
