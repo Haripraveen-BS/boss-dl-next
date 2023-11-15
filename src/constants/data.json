@@ -1,0 +1,155 @@
+{
+    "tabItem": [
+        {
+            "key": "1",
+            "label": "Listing Search",
+            "page": "HOME"
+        },
+        {
+            "key": "2",
+            "label": "Direct Listing",
+            "page": "DIRECT_LISTING"
+        },
+        {
+            "key": "3",
+            "label": "Complex Listing",
+            "page": "COMPLEX_LISTING"
+        }
+    ],
+    "selectOptions": {
+        "direction": [
+            {
+                "name": "w",
+                "value": "West"
+            },
+            {
+                "name": "n",
+                "value": "North"
+            }
+        ],
+        "suffix": [
+            {
+                "name": "ave",
+                "value": "Ave"
+            }
+        ],
+        "location": [
+            {
+                "name": "austin",
+                "value": "Austin"
+            },
+            {
+                "name": "chikako",
+                "value": "Chikako"
+            }
+        ],
+        "city": [
+            {
+                "name": "austin",
+                "value": "Austin"
+            },
+            {
+                "name": "newYork",
+                "value": "New York"
+            }
+        ],
+        "state": [
+            {
+                "name": "texas",
+                "value": "Texas"
+            },
+            {
+                "name": "alabama",
+                "value": "Alabama"
+            }
+        ],
+        "recordType": [
+            {
+                "name": "additionalLising",
+                "value": "Additional Listing"
+            }
+        ],
+        "styleCode": [
+            {
+                "name": "CI",
+                "value": "Caption Indent"
+            },
+            {
+                "name": "SC",
+                "value": "Sub Caption"
+            }
+        ],
+        "textType": [
+            {
+                "name": "indentText",
+                "value": "Indent Text"
+            }
+        ],
+        "listingType": [
+            {
+                "name": "listed",
+                "value": "Listed"
+            }
+        ],
+        "acctType": [
+            {
+                "name": "business",
+                "value": "Business"
+            }
+        ],
+        "recArea": [
+            {
+                "name": "foreign",
+                "value": "Foreign"
+            },
+            {
+                "name": "local",
+                "value": "Local"
+            }
+        ]
+    },
+    "checkboxFields": [
+        {
+            "label": "Instructed",
+            "name": "instructed",
+            "checked": true,
+            "isVisible": true
+        },
+        {
+            "label": "Omit Address",
+            "name": "omitAddress",
+            "checked": false,
+            "isVisible": true
+        },
+        {
+            "label": "Do not Sell Listing",
+            "name": "donotSellListing",
+            "checked": true,
+            "isVisible": true
+        },
+        {
+            "label": "Omil TN",
+            "name": "omilTN",
+            "checked": false,
+            "isVisible": true
+        },
+        {
+            "label": "Do not Mail",
+            "name": "doNotMail",
+            "checked": false,
+            "isVisible": false
+        },
+        {
+            "label": "Do not Telemarket/Call",
+            "name": "donotTelemarket/Call",
+            "checked": false,
+            "isVisible": false
+        },
+        {
+            "label": "Local Wholesale",
+            "name": "localWholesale",
+            "checked": false,
+            "isVisible": false
+        }
+    ]
+}
