@@ -5,7 +5,9 @@ import { FormData } from "@/constants/types";
 import Table, { ColumnsType } from "antd/es/table";
 import ListName from "@/components/DirectListing/ListName";
 import General from "@/components/DirectListing/General";
-import { Icons } from "@/components/common";
+import { DataTable, Icons } from "@/components/common";
+import { useAppSelector } from "@/hooks";
+import { RootState } from "@/store";
 
 interface DataType {
   key: React.Key;
@@ -75,12 +77,41 @@ const data: DataType[] = [
 ];
 const DirectListing = () => {
   const [formData, setFormData] = useState<FormData>({});
-  console.log("formData", formData);
+  const {orderList} = useAppSelector((state: RootState) => state.application);
+  const [tableData, setTableData] = useState([]);
+  const [data, setData] = useState({
+    data: [],
+    header: "",
+  });
 
+  const expandableColumnData = [
+    { label: "Customer", field: "customer", sortable: true },
+    { label: "Date", field: "date", sortable: true },
+  ];
+  const expandableKey = "orders";
+  const rowSelectionToggle = (row) => {
+    let message={
+      data:row.value
+    }
+    window.parent.postMessage(message,'*')
+  };
+
+  console.log("baseState", orderList);
+  
   return (
     <div className="directListing mx-12">
       <div className=" p-5 bg-white mb-4">
-        <Table columns={columns} dataSource={data} scroll={{ x: 2400 }} />s
+        {/* <Table columns={columns} dataSource={data} scroll={{ x: 2400 }} /> */}
+        <DataTable
+          rowData={orderList}
+          pagination={true}
+          isExpandable={true}
+          actionRequired={true}
+          expandableColumnData={expandableColumnData}
+          expandableKey={expandableKey}
+          onRowSelection={rowSelectionToggle}
+          setData={setData}
+          tableData={tableData} isLoading={undefined} searchPlaceholder={undefined}        />
       </div>
       <div className="flex justify-between w-full">
         <div className="w-[64%]">
