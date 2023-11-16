@@ -12,14 +12,14 @@ function Tabs(props: TabProps) {
   const baseState = useAppSelector((state: RootState) => state.application);
 
   return (
-    <div className="w-full h-20 px-12">
-      <div className="pt-12 flex gap-5 items-end border-blue-400 border-b">
+    <div className="w-full h-20 px-12 pt-20">
+      <div className="pt-12 flex gap-5 items-end border-gray-400 border-b">
         {items?.map((item, i) => (
           <button
             key={i}
             onClick={() => tabchange(item)}
-            className={`font-semibold cursor-pointer px-[18px] py-[7px] text-center text-blue-700 pb-[9.5px] ${baseState.activeTabId === item.key
-              ? "text-opacity-100 bg-opacity-10 bg-blue-700 relative top-[1px] border border-x-blue-400 border-t-blue-400"
+            className={`font-semibold cursor-pointer px-[18px] py-[7px] text-center pb-[9.5px] ${baseState.activeTabId === item.key
+              ? "text-opacity-100 bg-yellow-400 relative top-[1px] border border-x-gray-400 border-t-gray-400"
               : "text-opacity-50 "
               }`}
           >

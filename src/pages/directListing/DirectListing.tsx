@@ -80,7 +80,7 @@ const DirectListing = () => {
   return (
     <div className="directListing mx-12">
       <div className=" p-5 bg-white mb-4">
-        <Table columns={columns} dataSource={data} scroll={{ x: 2400 }} />s
+        <Table columns={columns} dataSource={data} scroll={{ x: 2400 }} />
       </div>
       <div className="flex justify-between w-full">
         <div className="w-[64%]">
