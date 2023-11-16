@@ -26,13 +26,13 @@ const Layout = ({children}:LayoutProps) => {
       key: "2",
       label: "Direct Listing",
       page: "DIRECT_LISTING",
-      path: "/direct"
+      path: "/directListing"
     },
     {
       key: "3",
       label: "Complex Listing",
       page: "COMPLEX_LISTING",
-      path: '/complex'
+      path: '/complexListing'
     },
   ];
     

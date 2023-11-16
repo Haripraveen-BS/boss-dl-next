@@ -18,7 +18,6 @@ function Home() {
     if (search) {
       getOrderData(search).then((res) => {
         if (res.data.length) {
-          dispatch(setActiveTab("2"));
           router.push(ROUTE_CONSTANTS.DIRECT_LISTING);
           console.log("order response", res);
           dispatch(setOrderList(res.data));
