@@ -13,11 +13,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <MsalProvider instance={msalInstance}>
       <Provider store={store}>
-        {/* <AppAuthenticator> */}
+        <AppAuthenticator>
             <Layout>
               <Component {...pageProps} />
             </Layout>
-        {/* </AppAuthenticator> */}
+        </AppAuthenticator>
       </Provider>
     </MsalProvider>
   );

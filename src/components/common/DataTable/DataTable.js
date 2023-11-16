@@ -12,7 +12,6 @@ import { AutoComplete } from "primereact/autocomplete";
 import { Dropdown } from "primereact/dropdown";
 import { Divider } from "primereact/divider";
 import { generateID } from "../../../utils/generateId";
-import './DataTable.css'
 
 export const renderStatusButton = (rowData, field) => {
   const value = rowData[field];
@@ -28,7 +27,7 @@ export const renderStatusButton = (rowData, field) => {
   );
 };
 
-export const DataTablePOC=({
+export const DataTablePOC = ({
   rowData,
   pagination,
   isLoading,
@@ -254,9 +253,9 @@ export const DataTablePOC=({
       </div>
     );
   };
-  const renderCellBody = (rowData,rowKey) => {
-   return <div>{rowData[rowKey] ? rowData[rowKey] : "-" }</div>
-  }
+  const renderCellBody = (rowData, rowKey) => {
+    return <div>{rowData[rowKey] ? rowData[rowKey] : "-"}</div>;
+  };
   const renderColumn = (colData = []) => {
     return colData.map((col, index) => {
       const { isCustom, body } = col;
@@ -270,7 +269,7 @@ export const DataTablePOC=({
           sortable
           filterPlaceholder={col.filterPlaceholder || ""}
           style={{ fontSize: "0.9rem" }}
-          body={(row)=>renderCellBody(row,col.field)}
+          body={(row) => renderCellBody(row, col.field)}
           editor={(option) => textEditor(option)}
         />
       );
@@ -290,13 +289,14 @@ export const DataTablePOC=({
 
   const renderHeader = () => {
     return (
-      <div className="flex align-items-center justify-content-between">
+      <div className="flex items-center justify-between">
         <span className="p-input-icon-left">
           <i className="pi pi-search" />
           <InputText
             value={globalValue.globalFilterValue}
             onChange={(e) => handleSearch(e.target.value)}
             placeholder={searchPlaceholder}
+            className="h-12 pl-8"
           />
           <i
             className="pi pi-filter ml-2 cursor-pointer"
@@ -312,7 +312,7 @@ export const DataTablePOC=({
           options={columnData}
           optionLabel="label"
           placeholder="Select Column"
-          className="w-20rem"
+          className="w-80"
           filter
           fixedPlaceholder={true}
           maxSelectedLabels={0}
@@ -322,7 +322,12 @@ export const DataTablePOC=({
   };
 
   const allowExpansion = (rowData, key) => {
-    if ( rowData && rowData[key] && Array.isArray(rowData[key]) && rowData[key].length) {
+    if (
+      rowData &&
+      rowData[key] &&
+      Array.isArray(rowData[key]) &&
+      rowData[key].length
+    ) {
       return rowData[key].length > 0;
     }
     //  else {
@@ -1113,5 +1118,5 @@ export const DataTablePOC=({
       </Dialog>
     </main>
   );
-}
+};
 export default DataTablePOC;

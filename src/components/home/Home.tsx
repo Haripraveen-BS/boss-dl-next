@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import Search from "@/assets/svg/search.svg";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -9,12 +9,13 @@ import axios from "axios";
 import { useLazyOrderListQuery } from "./homeQuery";
 
 function Home() {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("hardy");
   const router = useRouter();
   const dispatch = useAppDispatch();
   const [getOrderData, options] = useLazyOrderListQuery();
 
-  const handleSearchData = () => {
+  const handleSearchData = (e: FormEvent) => {
+    e.preventDefault()
     if (search) {
       getOrderData(search).then((res) => {
         if (res.data.length) {
@@ -31,7 +32,7 @@ function Home() {
       <div className="title text-center  pb-8 font-semibold text-gray-700 text-3xl">
         Customer Listing Search
       </div>
-      <div className="flex bg-gray-500 h-10 w-1/2 rounded pl-5 bg-opacity-10">
+      <form onSubmit={handleSearchData} className="flex bg-gray-500 h-10 w-1/2 rounded pl-5 bg-opacity-10">
         <input
           type="text"
           placeholder="Search with account number"
@@ -47,7 +48,7 @@ function Home() {
           alt="search"
           onClick={handleSearchData}
         />
-      </div>
+      </form>
       {/* {search.length > 0 &&
         <div className="searchResults w-1/2 mt-1  bg-gray-100 min-h-fit">
           {
