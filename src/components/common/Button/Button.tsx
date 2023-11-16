@@ -14,8 +14,8 @@ const Button = ({ title, btnType, extendedClass, ...restProps }: Props) => {
       {...restProps}
       className={`py-2 text-center ${
         btnType === "primary"
-          ? "px-10 bg-blue-600 text-white border-blue-700"
-          : "px-20 bg-blue-100 text-blue-700 border-blue-200"
+          ? "px-10 bg-yellow-400 text-white border-yellow-400"
+          : "px-20 bg-white text-yellow-400 border-yellow-200"
       } border font-semibold rounded  ${extendedClass ? extendedClass : ""}`}
     >
       {title}

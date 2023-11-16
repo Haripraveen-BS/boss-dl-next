@@ -59,7 +59,7 @@ const Select: React.FC<Select> = ({
           className={`${
             inputSize ? inputSizes[inputSize] : "w-full"
           } cursor-pointer shadow appearance-none border border-gray-300  rounded px-3 py-2 text-gray-700
-                 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-300`}
+                 bg-white leading-tight focus:outline-none focus:shadow-outline focus:border-yellow-300`}
           type="text"
         />
         {select && (

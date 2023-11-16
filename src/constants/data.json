@@ -106,6 +106,16 @@
                 "name": "local",
                 "value": "Local"
             }
+        ],
+        "complexOptions": [
+            {
+                "name": "foreign",
+                "value": "Foreign"
+            },
+            {
+                "name": "local",
+                "value": "Local"
+            }
         ]
     },
     "checkboxFields": [

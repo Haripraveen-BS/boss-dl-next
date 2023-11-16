@@ -26,7 +26,7 @@ const Icons: React.FC<IconProps> = ({ type = 'edit', classname, ...restProps }) 
   };
 
   return (
-    <div className={`${classname} p-1.5 bg-blue-200 rounded-md`} {...restProps}>
+    <div className={`${classname} p-1.5 bg-yellow-200 rounded-md`} {...restProps}>
       <Image 
         src={icons[type]}
         alt={type}

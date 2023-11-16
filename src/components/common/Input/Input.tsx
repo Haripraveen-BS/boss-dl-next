@@ -11,7 +11,7 @@ interface InputProps extends React.HTMLProps<HTMLInputElement> {
 const Input: React.FC<InputProps> = ({
   label,
   inputSize,
-  inputAction = true,
+  inputAction,
   inputValue,
   className,
   ...restProps
@@ -42,7 +42,7 @@ const Input: React.FC<InputProps> = ({
           className={`${
             inputSize ? inputSizes[inputSize] : "w-full"
           } shadow appearance-none border border-gray-300  rounded px-3 py-2 text-gray-700
-                 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-300`}
+                 bg-white leading-tight focus:outline-none focus:shadow-outline focus:border-yellow-300`}
           type="text"
         />
         {inputAction && (
