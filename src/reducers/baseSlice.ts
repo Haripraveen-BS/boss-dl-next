@@ -19,6 +19,9 @@ const baseSlice = createSlice({
     setActiveTab: (state, action) => {
       state.activeTabId = action.payload;
     },
+    setOrderList: (state, action) => {
+      state.orderList = action.payload;
+    },
   },
   extraReducers(builder) {
     builder.addMatcher(orderList.matchFulfilled, (state: any, action: any) => {
@@ -30,5 +33,5 @@ const baseSlice = createSlice({
     });
   },
 });
-export const { setActiveTab } = baseSlice.actions;
+export const { setActiveTab,setOrderList } = baseSlice.actions;
 export default baseSlice.reducer;

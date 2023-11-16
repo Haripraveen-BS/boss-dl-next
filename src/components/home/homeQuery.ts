@@ -6,6 +6,7 @@ export const homeQuery = api.injectEndpoints({
       query: (id) => ({
         url: `/listingSearch/${id}`,
       }),
+      
     }),
     userDelete: builder.mutation({
       query: (payload) => ({

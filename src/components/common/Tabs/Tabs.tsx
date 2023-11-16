@@ -10,7 +10,6 @@ interface TabProps {
 function Tabs(props: TabProps) {
   const { items, tabchange } = props;
   const baseState = useAppSelector((state: RootState) => state.application);
-  console.log("baseState", baseState);
 
   return (
     <div className="w-full h-20 px-12">

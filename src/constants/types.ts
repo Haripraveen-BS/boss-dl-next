@@ -2,6 +2,7 @@ interface TabItem {
   key: string;
   label: string;
   page: string;
+  path: string;
 }
 interface RouteConstants {
   [key: string]: string;

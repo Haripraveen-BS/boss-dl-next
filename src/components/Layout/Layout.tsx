@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {Tabs, Header} from "@/components/common";
 import { ROUTE_CONSTANTS } from "../../constants/routeConstants";
 import { TabItem } from "../../constants/types";
@@ -20,18 +20,25 @@ const Layout = ({children}:LayoutProps) => {
       key: "1",
       label: "Listing Search",
       page: "HOME",
+      path: "/"
     },
     {
       key: "2",
       label: "Direct Listing",
       page: "DIRECT_LISTING",
+      path: "/direct"
     },
     {
       key: "3",
       label: "Complex Listing",
       page: "COMPLEX_LISTING",
+      path: '/complex'
     },
   ];
+    
+  useEffect(()=>{
+    items.find((item: TabItem) => item.path == router.pathname && dispatch(setActiveTab(item.key)));
+  },[router.pathname]);
   const handleTabChange = (tab: TabItem) => {
     dispatch(setActiveTab(tab.key));
     router.push(ROUTE_CONSTANTS[tab.page]);

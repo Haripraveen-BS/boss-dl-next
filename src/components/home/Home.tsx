@@ -3,26 +3,27 @@ import Search from "@/assets/svg/search.svg";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { ROUTE_CONSTANTS } from "@/constants/routeConstants";
-import { setActiveTab } from "@/reducers/baseSlice";
+import { setActiveTab, setOrderList } from "@/reducers/baseSlice";
 import { useAppDispatch } from "@/hooks";
 import axios from "axios";
-
+import { useLazyOrderListQuery } from "./homeQuery";
 
 function Home() {
   const [search, setSearch] = useState("");
   const router = useRouter();
   const dispatch = useAppDispatch();
-
+  const [getOrderData, options] = useLazyOrderListQuery();
 
   const handleSearchData = () => {
-    if(search){
-      axios.get(`https://api-dev.brightspeed.com/dir-list-911/listingSearch/${search}`)
-      .then((res)=>{
-        console.log("test", res);
-        dispatch(setActiveTab("2"));
-        router.push(ROUTE_CONSTANTS.DIRECT_LISTING);
-        
-      })
+    if (search) {
+      getOrderData(search).then((res) => {
+        if (res.data.length) {
+          dispatch(setActiveTab("2"));
+          router.push(ROUTE_CONSTANTS.DIRECT_LISTING);
+          console.log("order response", res);
+          dispatch(setOrderList(res.data));
+        }
+      });
     }
   };
 
